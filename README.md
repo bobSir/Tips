@@ -10,7 +10,7 @@
 - 初始化git仓库 git init
 - 添加文件到仓库 git add .
 - 提交代码到仓库 git commit -m "init commit"
-- 链接到远程仓库 git remote add origin [https://github.com/bobSir/11.git](远程仓库地址)
+- 链接到远程仓库 git remote add origin (远程仓库地址)
 - push代码到服务器 git push -u origin master
 - 添加远程仓库 git remote add upstream (远程地址)
 - 克隆工程到本地 git clone (地址)
@@ -24,7 +24,7 @@
 - git checkout [$]切换分支
 - git cherry-pick [$] 提交修改到另一个分支
 - git push orgin 提交到orgin分支
-- [Git命令表：](http://blog.csdn.net/ithomer/article/details/7529841)
+- [Git命令表_链接](http://blog.csdn.net/ithomer/article/details/7529841)
 
 ## gradlew 命令
 - ./gradlew -v 
