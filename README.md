@@ -35,6 +35,8 @@
 - ./gradlew -installDebug
 - ./gradlew clean build --refresh-dependencies
 
+- mac文件生效 source 	~/.bashrc
+
 - 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
 ## 不透明表
 透明度      | 值
