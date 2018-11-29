@@ -34,10 +34,18 @@
 - ./gradlew -installRelease
 - ./gradlew -installDebug
 - ./gradlew clean build --refresh-dependencies
+- 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
+
+## 未命名
 
 - mac文件生效 source 	~/.bashrc
+- adb shell dumpsys activity 查看ActivityManagerService所有信息
+- adb shell dumpsys activities 查看Activity组件信息
+- providers 
+- broadcasts
+- intents
+- processes
 
-- 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
 ## 不透明表
 透明度      | 值
 ---        | ---
