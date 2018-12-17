@@ -46,6 +46,8 @@
 - intents
 - processes
 
+- ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
+
 ## 不透明表
 透明度      | 值
 ---        | ---
