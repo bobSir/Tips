@@ -45,6 +45,7 @@
 - broadcasts
 - intents
 - processes
+- adb shell && run-as 包名
 
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
 
