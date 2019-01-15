@@ -45,7 +45,7 @@
 - broadcasts
 - intents
 - processes
-- adb shell && run-as 包名
+- adb shell & run-as 包名
 - chmod u+x *.sh 添加执行权限
 
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
