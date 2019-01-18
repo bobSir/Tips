@@ -40,7 +40,7 @@
 
 - mac文件生效 source 	~/.bashrc
 - adb shell dumpsys activity 查看ActivityManagerService所有信息
-- adb shell dumpsys activities 查看Activity组件信息
+- adb shell dumpsys activity activities 查看Activity组件信息
 - providers 
 - broadcasts
 - intents
