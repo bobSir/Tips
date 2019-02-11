@@ -40,11 +40,15 @@
 
 - mac文件生效 source 	~/.bashrc
 - adb shell dumpsys activity 查看ActivityManagerService所有信息
-- adb shell dumpsys activities 查看Activity组件信息
+- adb shell dumpsys activity activities 查看Activity组件信息
 - providers 
 - broadcasts
 - intents
 - processes
+- adb shell & run-as 包名
+- chmod u+x *.sh 添加执行权限
+
+- ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
 
 ## 不透明表
 透明度      | 值
