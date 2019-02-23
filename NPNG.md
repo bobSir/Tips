@@ -55,6 +55,11 @@ CachedThreadPool: 缓存线程池
 - MainThreadDelivery 回调至主线程封装类
 - 内存泄漏、handler.removeCallbacksAndMessages(null)
 
+## 2019/02/21
+### Android Studio NDK坑
+- 在fundWeex Android项目中限制使用ndk16，安装CMAKE，安装ninja，编译没有报相关ninja，CMAKElog中没有说明需要安装ninja，安装完ninja正常编译，brew install ninja。
+- anyChat中NDK版本为ndk16，安装最新Android sdk对应NDK版本为19，手动下载NDK16，配置NDK16路径。
+
 
 
 
