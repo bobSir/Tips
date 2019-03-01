@@ -5,7 +5,9 @@
 ## 2019/02/12
 ### okHttp socket通信
 - WebSocket  OkHttpClient.newWebSocket(request,WebSocketListener)[anyChat WebSocketManager.java]
+
 ### 工作总结
+
 ### 面试题归纳，解答
 
 ## 2019/02/13
@@ -60,9 +62,17 @@ CachedThreadPool: 缓存线程池
 - 在fundWeex Android项目中限制使用ndk16，安装CMAKE，安装ninja，编译没有报相关ninja，CMAKElog中没有说明需要安装ninja，安装完ninja正常编译，brew install ninja。
 - anyChat中NDK版本为ndk16，安装最新Android sdk对应NDK版本为19，手动下载NDK16，配置NDK16路径。
 
+## 2019/02/25
+- VasSonic源码解析
+- 预加载
+- 缓存策略
 
+## 2019/02/26
+- [Apk反编译](https://mp.weixin.qq.com/s/nn-nwXnRI9JYSmknH1pzYg)
 
-
+### webView加载优化
+- webView池子
+- webView预加载
 
 
 
