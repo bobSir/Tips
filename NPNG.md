@@ -74,6 +74,10 @@ CachedThreadPool: 缓存线程池
 - webView池子
 - webView预加载
 
+## 2019/03/01
+
+### 图表实现：webView加载H5，JS数据通信。eChat，highChart。
+
 
 
 
