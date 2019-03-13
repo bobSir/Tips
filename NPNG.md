@@ -3,7 +3,7 @@
 2. [I/O优化](https://time.geekbang.org/column/article/74988) 页缓存 地址映射
 
 ## 2019/02/12
-### okHttp socket通信
+### okHttp webSocket通信
 - WebSocket  OkHttpClient.newWebSocket(request,WebSocketListener)[anyChat WebSocketManager.java]
 
 ### 工作总结
@@ -77,6 +77,11 @@ CachedThreadPool: 缓存线程池
 ## 2019/03/01
 
 ### 图表实现：webView加载H5，JS数据通信。eChat，highChart。
+
+## 2019/03/08
+- 构造函数 创建对象时执行
+- 静态代码块 jvm加载类时执行，仅执行一次
+- 构造代码块 创建对象时执行，在构造方法之前
 
 
 

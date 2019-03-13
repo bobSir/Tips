@@ -44,7 +44,24 @@
 - onTouch()->onClick()
 - dispatchTouchEvent() activity->viewGroup->view, onTouchEvent() view->viewGroup->activity
 
+## Socket[玉刚说](https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&mid=2649492841&idx=1&sn=751872addc47d2464b8935be17d715d6&chksm=8eec8696b99b0f80b2ebb8e4c346adf177ad206401d83c17aca4047d883b0cc7c0788619df9d&scene=38#wechat_redirect)
+- IP协议，提供了两个IP之间的通信
+- TCP: 建立在IP的基础上，完成了主机与主机之间进程的通信。建立通信之前需要三次握手，
+- UDP: 不需要经过握手，就可以直接发送数据
+- Socket是TCP层的封装，通过socket，可以进行TCP通信。
+- socket共有两个接口，用于监听客户连接的ServerSocket和用户通信的Socket
+
+## [面试题目合集](https://www.jianshu.com/p/20754b1adb4d)
+
+## RxJava
+
 ## NDK
+
+## 团队影响力
+
+## 业务推动力
+
+## 沟通能力
 
 
 
