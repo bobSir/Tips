@@ -4,7 +4,6 @@
 - 在终端中敲下面的命令，第一步会生成一堆私钥和公钥，分别存在~/.ssh/id_rsa和~/.ssh/id_rsa.pub中。第二部查看公钥字符串，
 - ssh-keygen -t rsa -C "$your_email"  
 - cat ~/.ssh/id_rsa.pub
-
 ## 上传已有工程到Git
 - 进入工程目录 cd $project_name
 - 初始化git仓库 git init
@@ -47,7 +46,6 @@
 - processes
 - adb shell & run-as 包名
 - chmod u+x *.sh 添加执行权限
-
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
 
 ## 不透明表

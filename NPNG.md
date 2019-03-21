@@ -83,6 +83,15 @@ CachedThreadPool: 缓存线程池
 - 静态代码块 jvm加载类时执行，仅执行一次
 - 构造代码块 创建对象时执行，在构造方法之前
 
+## 2019/03/13
+- Material Design 
+- Ripple效果：android:background="?android:attr/selectableItemBackground" //波纹有边界 selectableItemBackgroundBorderless //波纹超出边界  可以自定义Ripple标签。
+- Circular Reveal: ViewAnimationUtils.createCircularReveal(view,centerX,centerY,startRadius,endRadius)
+- View state changes Animation: 视图改变时的动画效果，StateListAnimator。AnimationInflater.loadStateListAnimator() View.setStateListAnimator()分配动画到视图上。
+
+## 2019/03/18
+- IntentService vs Service
+- onHandleIntent工作线程处理耗时任务，单线程流程处理任务。执行完任务自动停止。
 
 
 

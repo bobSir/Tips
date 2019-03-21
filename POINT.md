@@ -51,6 +51,12 @@
 - Socket是TCP层的封装，通过socket，可以进行TCP通信。
 - socket共有两个接口，用于监听客户连接的ServerSocket和用户通信的Socket
 
+## HTTP & HTTPS
+- http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。
+- http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
+- http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
+
+
 ## [面试题目合集](https://www.jianshu.com/p/20754b1adb4d)
 
 ## RxJava
