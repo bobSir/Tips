@@ -40,6 +40,28 @@
 ## 获取所有线程堆栈 
 - Thread.getAllStackTraces()  7.0不返回主线程的堆栈。
 
+## 事件分发机制
+```Java
+	public boolean dispatchTouchEvent(MotionEvent ev){
+		boolean consume = false;
+		if (onInterceptTouchEvent(ev)) {
+			consume = onTouchEvent(ev);
+		}else{
+			consume = child.dispatchTouchEvent(ev);
+		}
+		return consume;
+	}
+```
+- onTouchListener的优先级高于OnTouchEvent
+
+## ConstraintLayout 联动&Behavior
+
+## View宽高
+- onLayout以后才能确定拿到View的宽高，getMeasureWidth有可能不等与getWidth，源码上getWidth是mRight-mLeft。获取View宽高 1、onWindowFocusChanged 2、view.post() 源码解析：View源码中AttachInfo(附加到父View时为视图提供的一组信息)handler实现，运行在当前视图线程。
+
+## ViewRoot WindowManager DecorView
+- 在ViewRoot中requestlayout() 会检测当前线程是否为创建ViewRootImpl的线程，如果不是就会报出异常。viewRootImpl是在onResume时创建的，Android以此控制操作UI要在主线程中。Android是单线程模型，因为支持多线程修改View的话，容易出现线程同步，线程安全的问题，简化了系统设计。
+
 
 
 
