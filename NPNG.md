@@ -93,10 +93,12 @@ CachedThreadPool: 缓存线程池
 - IntentService vs Service
 - onHandleIntent工作线程处理耗时任务，单线程流程处理任务。执行完任务自动停止。
 
+## 2019/04/19
+- <item name="android:windowBackground">@null</item>坑坑坑，style设置这个属性后activit不会回调到onStop，对Android系统来说这个activity是可见的只是不可交互、
+- activity透明不要用这个属性，将windowBackGround设置为透明，overridePendingTransition（animEnter,animExit）, animExit也设置一个默认动画避免黑屏、
 
-
-
-
+## 查看签名
+keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 
 
