@@ -23,6 +23,7 @@
 - git checkout [$]切换分支
 - git cherry-pick [$] 提交修改到另一个分支
 - git push orgin 提交到orgin分支
+- git checkout -b 0.3.0 upstream/0.3.0
 - [Git命令表_链接](http://blog.csdn.net/ithomer/article/details/7529841)
 
 ## gradlew 命令
