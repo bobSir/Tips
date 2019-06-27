@@ -7,3 +7,5 @@
 - [自定义layoutManager](https://blog.csdn.net/ccy0122/article/details/90515386)
 
 - [一线互联网公司面试题](http://www.jackywang.tech/AndroidInterview-Q-A/interview/)
+
+- [Flutter开发实战详解](https://juejin.im/user/582aca2ba22b9d006b59ae68/posts)
