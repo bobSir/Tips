@@ -18,13 +18,14 @@
 - git merge upstream/master 合并代码
 - git stash 将冲突暂存
 - git stash pop 解决冲突
+- git stash apply stash@{1}
+
 - git pull    拉取远程仓库
 - git log 查看提交信息
 - git checkout [$]切换分支
 - git cherry-pick [$] 提交修改到另一个分支
 - git push orgin 提交到orgin分支
 - git checkout -b 0.3.0 upstream/0.3.0
-- git stash apply stash@{1}
 - [Git命令表_链接](http://blog.csdn.net/ithomer/article/details/7529841)
 
 ## gradlew 命令
