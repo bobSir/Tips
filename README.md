@@ -50,6 +50,7 @@
 - adb shell & run-as 包名
 - chmod u+x *.sh 添加执行权限
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
+- 反编译 命令 sh d2j-dex2jar.sh classes.dex
 
 ## 不透明表
 透明度      | 值
