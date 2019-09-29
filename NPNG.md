@@ -100,8 +100,20 @@ CachedThreadPool: 缓存线程池
 ## 查看签名
 keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
+## 2019/09/13
+- 查看activity启动时间 在logcat中No Filters检索Displayed
 
+## 2019/09/23
+- activity finish()->onDestroy() 触发fragment onDestroy()时机不确定。
 
+## 2019/09/24
+- GlideException: Failed to load resource 检查加载图片地址是否前后有空格，或者引号，可以把url用GlideUrl(url)包起来检测查看异常信息。
+
+## 2019/09/25
+- WXSDKEngine weexSdk注册组件管理类
+
+## 2019/09/29
+- DialogFragment背景设置 颜色 高斯模糊...只是对弹窗设置和页面无关。
 
 
 
