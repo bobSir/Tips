@@ -114,6 +114,7 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 ## 2019/09/29
 - DialogFragment背景设置 颜色 高斯模糊...只是对弹窗设置和页面无关。
+- 一个View在子线程中创建，在子线程中就可以操作该控件的UI，线程调度到主线程再添加到在主线程中创建的视图上即可完成展示。
 
 
 
