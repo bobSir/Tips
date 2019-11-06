@@ -104,7 +104,7 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - 查看activity启动时间 在logcat中No Filters检索Displayed
 
 ## 2019/09/23
-- activity finish()->onDestroy() 触发fragment onDestroy()时机不确定。
+- activity finish()->onDestroy() 触发fragment onDestroy()时机不确定，不同手机fragment回调onDestroy()有不同程度的延迟，如果在fragment的onDestroy有业务逻辑处理的话，需要主动触发。
 
 ## 2019/09/24
 - GlideException: Failed to load resource 检查加载图片地址是否前后有空格，或者引号，可以把url用GlideUrl(url)包起来检测查看异常信息。
@@ -114,7 +114,19 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 ## 2019/09/29
 - DialogFragment背景设置 颜色 高斯模糊...只是对弹窗设置和页面无关。
-- 一个View在子线程中创建，在子线程中就可以操作该控件的UI，线程调度到主线程再添加到在主线程中创建的视图上即可完成展示。
+- 可以在子线程中操作UI 一个View在子线程中创建，在子线程中就可以操作该控件的UI，线程调度到主线程再添加到在主线程中创建的视图上即可完成展示，这样完成的视图如果需要再操作UI，要回到创建它的线程中操作才行。
+
+## webSocket实现客户端热加载实践
+
+
+
+## 2019/11/1 **Activity & Fragment传值区别**
+- Activity & Fragment 通过Bundle传值区别：Activity底层通过Binder实现传值，Activity之间传值 sdk考虑到有可能跨进程，所以如果传值对象非基本数据类型都要主动实现序列化，来完成传值。Fragment之间传值，不为存在跨进程的场景，所以不用具体实现序列化的函数，也能正常完成传值。那么这里就会引发一个问题，传值如果只是值传递的话，就会在另一个Fragment中改变数据源的情况出现。所以在fragment中通过bundle传值，值要深拷贝。或者考虑其他传值方式。Java是传值引用，可以final修饰防止修改，Clone。
+
+## 2019/11/5 修改aar重新打包 tar命令 压缩.tgz
+- https://www.jianshu.com/p/f0a267551493
+- $ jar cvf newAAR.aar -C tempFolder/ .
+- tar czvf FileName.tgz path
 
 
 
