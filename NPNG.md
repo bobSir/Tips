@@ -128,6 +128,14 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - $ jar cvf newAAR.aar -C tempFolder/ .
 - tar czvf FileName.tgz path
 
+## 2019/11/11 
+- fragment为什么需要一个public的空构造器 android.support.v4.app.Fragment$InstantiationException: 异常原因是因为使用的fragment没有public的空构造器。源码通过Java反射机制实例化fragment。当应用被系统杀掉后回到前台，如果这个时候有UI呈现在Fragment中，那么因为restore造成fragment需要通过反射实例对象，从而将之前save的状态还原，这个反射就是fragment需要public的空构造器所在。
+- transformClassesWithMultidexlistForDebug: 这个编译异常多半是因为程序中存在重复的包，可以通过./gradlew assembleDebug --stacktrace 输出详细log，定位重复包。
+
+## 2019/11/12 SharedPreferences思考
+- 文件xml 内存中map 同步锁实现线程安全 commit发生在UI线程 - 存储过大key value容易卡顿 aar apply发生在工作线程 放在线程池的任务队列中 表面不会阻塞UI线程 但在activity的onStop中源码handleStopActivity()中QueuedWork.waitToFinish()；如果apply的任务多，也会引起aar。
+- 每次edit都会创建一个EditorImpl对象，修改或者添加都会将数据添加到mModifiled中，在commit或apply时比较mMap和mModifiled数据修正mMap再写入文件中。get是直接从map中读取如果存储大型的key或value他们会一直在内存中得不到释放。
+
 
 
 
