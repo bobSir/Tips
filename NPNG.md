@@ -136,6 +136,22 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - 文件xml 内存中map 同步锁实现线程安全 commit发生在UI线程 - 存储过大key value容易卡顿 aar apply发生在工作线程 放在线程池的任务队列中 表面不会阻塞UI线程 但在activity的onStop中源码handleStopActivity()中QueuedWork.waitToFinish()；如果apply的任务多，也会引起aar。
 - 每次edit都会创建一个EditorImpl对象，修改或者添加都会将数据添加到mModifiled中，在commit或apply时比较mMap和mModifiled数据修正mMap再写入文件中。get是直接从map中读取如果存储大型的key或value他们会一直在内存中得不到释放。
 
+## ABI so库
+- 如果在gradle中指定输出多个abi，那么如果该工程还依赖其他so库，这个so要提供所有ABI的so库。
+- 门面模式 接口隔离
+
+## 混淆配置
+- minifyEnabled true 开始混淆 把proguard配置打包进aar
+```java
+ defaultConfig {
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+```
+
+## 2019/11/27 启动优化
+- application不要做耗时操作，如必须可以等待必要操作完成再初始化，不要造成阻塞，开线程依然会占用系统资源(主要是CPU)，阻塞renderThread。
+- 在实际测试中发现不同的手机厂商对application中的初始化，到程序主入口页面展示(manifest action.main)，中间的时间限制并不相同，这样在app启动速度对比中也会存在偏差。同等优化下小米的启动速度大于华为。
+
 
 
 
