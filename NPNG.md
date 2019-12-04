@@ -6,10 +6,6 @@
 ### okHttp webSocket通信
 - WebSocket  OkHttpClient.newWebSocket(request,WebSocketListener)[anyChat WebSocketManager.java]
 
-### 工作总结
-
-### 面试题归纳，解答
-
 ## 2019/02/13
 1. Http headers、拦截器、取消网络请求、tag,okHttpClient.dispatcher().queueCalls()、okHttpClient.dispatcher().runningCalls()、call.cancel()
 
@@ -152,7 +148,13 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - application不要做耗时操作，如必须可以等待必要操作完成再初始化，不要造成阻塞，开线程依然会占用系统资源(主要是CPU)，阻塞renderThread。
 - 在实际测试中发现不同的手机厂商对application中的初始化，到程序主入口页面展示(manifest action.main)，中间的时间限制并不相同，这样在app启动速度对比中也会存在偏差。同等优化下小米的启动速度大于华为。
 
+## 2019-12-02 13:44:45 buffer.toString()
+- buffer.toString()源码实现，为了性能会截取字符串长度。readUtf8()输出所有。
+- weex Post请求 body源码实现wson解析，map存储，最终是无序的。
+- viewPager必须设置一个id，即使不使用。IllegalStateException: ViewPager with adapter com.fund.weex.lib.view.fragment.TopTabFragmentPagerAdapter@acf2ba8 requires a view id
 
+## 2019-12-03 17:33:06 json解析异常
+- 先检查数据格式类型
 
 
 

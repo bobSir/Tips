@@ -19,6 +19,7 @@
 - git stash 将冲突暂存
 - git stash pop 解决冲突
 - git stash apply stash@{1}
+- git push origin 1.2.0:1.2.0
 
 - git pull    拉取远程仓库
 - git log 查看提交信息
@@ -77,3 +78,9 @@
 10%        | E6
 5%         | F2
 0%         | FF
+
+## activity & fragment 生命周期
+
+- [activity生命周期](/activity_life.png)
+
+- [fragment生命周期](/fragment_life.png)
