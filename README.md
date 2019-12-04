@@ -81,6 +81,6 @@
 
 ## activity & fragment 生命周期
 
-- [activity生命周期](/activity_life.png)
+![activity生命周期](/activity_life.png)
 
-- [fragment生命周期](/fragment_life.png)
+![fragment生命周期](/fragment_life.png)
