@@ -156,6 +156,10 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 ## 2019-12-03 17:33:06 json解析异常
 - 先检查数据格式类型
 
+## 2019-12-04 13:27:24 
+- logcat查看Activity启动时间 no Fliters 过滤关键词 ActivityManager 可以查看uid 启动耗时。
+- artifactory java -jar artifactory-injector-1.1.jar -> 2 -> 设置home(artifactory解压目录) -> 生成license -> 执行artifactory.sh(windows artifactory.bat start)  
+
 
 
 

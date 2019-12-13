@@ -53,6 +53,7 @@
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
 - 反编译 命令 sh d2j-dex2jar.sh classes.dex
 - 单独打某个渠道包 ./gradlew assemblehuaweiDebug  ./gradlew assemblehuawei
+- keytool -list -v -keystore lanxin.jks 查看应用签名信息
  
 ## 不透明表
 透明度      | 值
