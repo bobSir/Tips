@@ -20,6 +20,7 @@
 - git stash pop 解决冲突
 - git stash apply stash@{1}
 - git push origin 1.2.0:1.2.0
+- git push -u origin 0.7.0android -f
 
 - git pull    拉取远程仓库
 - git log 查看提交信息

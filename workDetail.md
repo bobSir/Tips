@@ -122,6 +122,228 @@ w
 3. JS - 原生 交互
 4. 原生工具栏
 
+### 资讯秒开笔记
+
+- FundNewsFlowNewsItemView.class 资讯详情跳转
+- 资讯接口文档 https://appnewstest.1234567.com.cn/FundCMS.ApiDoc/swagger/ui/index#/
+
+http://gubadoc.eastmoney.com/gubaapi/index.php?s=/4&page_id=221
+1.2 赞帖子（投资组合，新闻，公告，研报，普通帖，自媒体文章，自媒体话题等）
+1.4 取消赞帖子（投资组合，新闻，公告，研报，普通帖，自媒体文章，自媒体话题等）
+1.6 赞回复（投资组合，新闻，公告，研报，普通帖）
+1.8 取消赞回复（投资组合，新闻，公告，研报，普通帖）
+
+1.1  http://gubadoc.eastmoney.com/gubaapi/index.php?s=/4&page_id=214
+东财app 发帖接口
+访问密码：1df06543210cf1
+
+### TODO
+
+#### 资讯详情正文
+1. 打开不同类型文章
+2. 样式&短链跳转
+
+#### 中间内容
+1. 关键词
+2. 点赞&分享
+3. 广告
+4. 相关推荐
+
+#### 评论列表&底部功能区
+
+- 异常页面
+
+#### 模板更新
+#### js - NATIVE 交互
+//预加载资讯详情
+- preloadNewsData({  
+	articleType:'',
+	articleId:''
+})
+
+//显示回复键盘
+- showReplyKeyboard({
+	reply:{
+		id:'',
+		userName:''
+	},
+	success:(res) => {
+
+	}
+})
+
+//分享
+- showShare({
+	articleType:'',
+	articleId:''
+})
+
+//微信
+- shareWeChat({
+	type:'' //微信weChat、朋友圈wCFriends
+	articleId:''
+})
+
+//通用短链
+- commonLinkTo({
+	url:''
+})
+
+//跳转个人主页
+- navigateToUserHostHome({
+	
+})
+
+//图片浏览
+- previewImage({
+	urls:
+})
+
+
+## 评论列表
+### 资讯&财富号
+- https://appnewstest.1234567.com.cn/FundCMS.ApiDoc/swagger/ui/index#!/AppService/AppService_GetNewsReplyList
+
+### 帖子&回答
+- http://10.228.130.163:7201/home/project?name=%E5%9F%BA%E9%87%91%E5%90%A7%E6%96%B0%E6%8E%A5%E5%8F%A3#Fund_MBNew_Api_FundMBNewController_UserPointConfigureNew_Fund_MBNew_Api_Model_Request_UserPointRequest625_
+- ArticleReplys 
+- 密码 dddwwwse2232ddZA22
+
+- 数据结构不一样！
+
+### 赞回复
+- http://10.228.129.227:8181/swagger-ui.html#!/3103821306361643575925805203162550921475/likeArticleReplyUsingPOST
+
+### 帖子 问答 评论
+- http://10.228.130.163:7201/home/returnmodel?typename=Fund.MBNew.Api.FundMBNewController&actionname=Reply  返回参数
+- FundBarCommentReplyActivity #378
+
+#### 回复帖子
+- url:https://fundmobapitest2.eastmoney.com/FundMCApi/FundMBNew/Reply
+- params:appType=ttjj&t_type=0&userid=41fbf9a73b9d4de1bc4642f34ec4a45e&product=EFund&type=0&Version=6.2.5&ReqNo=1577359958096&keywordlist={}&deviceid=fab64d45af7318f3bedde4f054ace216||124844930637568&cccccccTokenErrorStop=true&huifuid=&text=[赞]&cToken=6fk86fd-fjn-qf81kcukk-8cnqrcrf8e&newsid=&tid=891191254&is_repost=false&uToken=8h-8kfq8dcd6k-dd--1jfqkqcafahan8&plat=Android&passportid=1010285287738720
+
+#### 回复评论
+- url:https://fundmobapitest2.eastmoney.com/FundMCApi/FundMBNew/Reply
+- params:appType=ttjj&t_type=0&userid=41fbf9a73b9d4de1bc4642f34ec4a45e&product=EFund&type=0&Version=6.2.5&ReqNo=1577360052973&keywordlist={}&deviceid=fab64d45af7318f3bedde4f054ace216||124844930637568&cccccccTokenErrorStop=true&huifuid=8840285945&text=[赞]&cToken=6fk86fd-fjn-qf81kcukk-8cnqrcrf8e&newsid=&tid=894389199&is_repost=false&uToken=8h-8kfq8dcd6k-dd--1jfqkqcafahan8&plat=Android&passportid=1010285287738720
+
+### 资讯 财富号 评论
+- FundCommentReplyActivity 395
+
+#### 回复文章
+- https://appnews.1234567.com.cn/api/AppService/ReplyArticle
+- params:t_type=1&UserId=41fbf9a73b9d4de1bc4642f34ec4a45e&passportId=1010285287738720&gToken=ceaf-17bc7941d8177946da41795a240de157&type=0&Plat=Android&OSVersion=7.1.1&text=[赞]&isRepost=false&MarketChannel=AndroidMarket&DeviceId=fab64d45af7318f3bedde4f054ace216||124844930637568&artCode=201912261337426837&huifuId=0&cToken=6fk86fd-fjn-qf81kcukk-8cnqrcrf8e&pitype=0&appVersion=6.2.5&MobileKey=fab64d45af7318f3bedde4f054ace216||124844930637568&uToken=8h-8kfq8dcd6k-dd--1jfqkqcafahan8&key=a8eb1746-1375-8def-b5e8-fe369ee73d68
+
+#### 回复评论
+- url:https://appnews.1234567.com.cn/api/AppService/ReplyArticle
+- params:t_type=1&UserId=41fbf9a73b9d4de1bc4642f34ec4a45e&passportId=1010285287738720&gToken=ceaf-17bc7941d8177946da41795a240de157&type=0&Plat=Android&OSVersion=7.1.1&text=[赞]&isRepost=false&MarketChannel=AndroidMarket&DeviceId=fab64d45af7318f3bedde4f054ace216||124844930637568&artCode=201912261337426837&huifuId=8840226409&cToken=6fk86fd-fjn-qf81kcukk-8cnqrcrf8e&pitype=0&appVersion=6.2.5&MobileKey=fab64d45af7318f3bedde4f054ace216||124844930637568&uToken=8h-8kfq8dcd6k-dd--1jfqkqcafahan8&key=a8eb1746-1375-8def-b5e8-fe369ee73d68
+
+## 中间内容
+- FundCFHRecentlyNewsView 80 最近更新
+- FundRelateNewsView 103 相关资讯
+
+- 广告 资讯 & 财富号 包在正文中  admodel  帖子&问答 FundBarFunctions #262
+- 点赞文章 FundBarFunctions 262 4合一
+- 不感兴趣 FundBarFunctions 494 回答没有
+- 打赏 帖子 跳转
+- 收藏 FundBarFunctions 413 取消
+
+
+# TODO
+
+## 资讯详情
+
+### 接口替换 
+- 列表
+
+- 正文 关键词匹配
+
+### 正文
+- 上次阅读
+- 阅读全文
+- 视频 (资讯视频 财富号视频)
+- 查看原文链接
+- 图片浏览
+- UI还原
+
+### 中间内容
+- UI
+- 数据绑定
+- 打赏
+- 分享
+- 广告
+- 相关推荐 or 最近更新
+- 业务逻辑梳理
+- 评论操作区
+- UI还原
+
+### 评论区
+- UI
+- 数据绑定 数据交互
+- 评论原生交互
+- 评论表情
+- 评论图片
+- UI还原
+- 分享
+
+### 细节
+
+- 交互细节
+
+
+## 资讯列表
+
+### 接口对接
+- 自选基金 资讯 + 公告
+/cms/getlist
+- 个股资讯
+/api/fund/ann
+- 资讯页tab
+/api/v1/fund/
+
+
+- 七巧板
+
+
+
+
+## 业务整理
+
+### 页面整理
+
+### 接口整理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

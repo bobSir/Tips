@@ -158,8 +158,35 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 ## 2019-12-04 13:27:24 
 - logcat查看Activity启动时间 no Fliters 过滤关键词 ActivityManager 可以查看uid 启动耗时。
-- artifactory java -jar artifactory-injector-1.1.jar -> 2 -> 设置home(artifactory解压目录) -> 生成license -> 执行artifactory.sh(windows artifactory.bat start)  
+- artifactory java -jar artifactory-injector-1.1.jar -> 2 -> 设置home(artifactory解压目录) -> 生成license -> 执行artifactory.sh(windows artifactory.bat start) 
 
+## 2020-2-3 锁 JDK层理解
+- synchronized 排斥锁 对象锁 类锁、 静态方法，对象的锁相当于类锁，jvm中只存在一个。
+- synchronized 隐式锁 1、没有中断 2、阻塞式获取锁
+- 线程协作 Object.wait()释放锁  notify/notifyAll
+- TheadLocal  threadLocal.set threadLocal.get  线程隔离 避免数据共享 每个线程数据副本
+- Lock 显式锁 使用范式 finally中unlock()释放锁 可重入。
+- 锁的公平与非公平 非公平锁 减少上下文切换时间，线程挂起 运行 操作系统会进行上下文切换。
+- 读写锁 允许同时读写操作 不排斥，ReadWriteLock
+- 悲观锁 乐观锁 读 写(compare and swap)
+- Lock Condition实现等待通知 await singal
+- 线程池 (线程数 最大线程数 存活时间 blockQueue rejected Ecutonhandle)
+- 合理配置线程数 CPU密集型 机器最大线程数 Runtime.getRunTime.avialprocress IO密集型 
+- AsyncTask 默认创建2个线程池 SerialExecutor()保征任务串行执行   ThreadPoolExecutor()执行异步任务  InternalHandler 消息通知主线程
+- volatile 易变的 JDK提供的最轻量级的数据同步机制  保征可见性 不能保征原子性
+- JVM 主内存 工作内存 每个线程都会有一个工作内存 工作内存数据操作后悔同步到主内存 线程读取操作数据只会在工作内存中读取。
+- synchronized 本质上是锁对象 锁的是主内存中的对象。 volatile只是在读取的时候工作内存拉下主内存中的数据。只有一个线程写 其他线程读 volatile没有问题。
 
+## RxJava 2020-02-10 21:54:09
+- 观察者模式 响应模式
+- 操作符
+- 线程调度
+- 背压 Flowable 4种策略
+
+### 实际应用
+- 网络请求 嵌套请求 轮询 出错重连
+- 防双击
+- 多级缓存获取数据
+- 合并数据源
 
 

@@ -62,6 +62,9 @@
 ## ViewRoot WindowManager DecorView
 - 在ViewRoot中requestlayout() 会检测当前线程是否为创建ViewRootImpl的线程，如果不是就会报出异常。viewRootImpl是在onResume时创建的，Android以此控制操作UI要在主线程中。Android是单线程模型，因为支持多线程修改View的话，容易出现线程同步，线程安全的问题，简化了系统设计。
 
+## 渠道打包 自动化部署
+- https://codezjx.com/2015/10/30/gradle-app-multi-flavor/
+
 
 
 
