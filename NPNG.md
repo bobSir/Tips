@@ -276,7 +276,6 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
         }
 ```
 
-
 ## 崩溃上报、分析
 - 搜集更详细的信息，进程 线程 内存情况 页面 操作路径，特定场景下搜集网路 电量...
 
@@ -313,7 +312,7 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - https://codezjx.com/2015/10/30/gradle-app-multi-flavor/
 
 ## 2020-04-01 11:11:03 @cly
-
+- [BitmapRegionDecoder 区域解码器加载超大图](https://www.jianshu.com/p/878e4ddaa51b)
 
 
 
