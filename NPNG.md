@@ -189,4 +189,141 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - 多级缓存获取数据
 - 合并数据源
 
+## 内存
+
+- 设备分级、device-year-class
+
+- Bitmap优化、远超View宽高，超屏幕大小。加载重复图片
+
+- 内存泄露 LeakCanary
+
+- 内存泄露、减少内存申请、及时回收、减少常驻内存、精简布局、图片。
+
+- Android Bitmap内存分配变化，bitmap对象、像素数据。
+- Java堆中、Native内存，Android Low memory killer。
+- Fresco在Dalvik会把图片放到Native内存中。
+
+### Matrix：开源APM
+
+### Dalvik ART 虚拟机
+
+## handler
+
+- handler,looper,Message,MessageQueue
+- 子线程中创建Handler,Looper.prepare()->new Handler()->Looper.loop()
+- PostDelay(),postDelay的Message并不是先等待一定时间在放到MessageQueue中，而是直接放入并阻塞当前线程，然后将其delay的时间和对头的进行比较，按照触发时间进行排序。
+
+## service
+
+- startService(intent) onCreate->onStartCommand->onDestroy,stopService(intent)。Service单独任务，与Activity没有通信。
+
+- bindService(intent,ServiceConnection,flag) onCreate->onBind->onDestroy，unBindService(ServiceConnection)。与Activity建立通信。销毁Service(onDestroy) 解绑(如果有bindService)，stop(如果有startService)。
+
+- Service是运行在主线程的，在Service中执行耗时操作会ANR，理解为后台任务，生命周期与进程相关。可以在Service中启子线程完成耗时操作。所有的Activity都能和Service进行关联获取的是原有Service中Binder实例。
+
+- 前台Service，在onCreate中实现Notification，使其显示于状态栏。
+
+- [郭霖Service解析](https://blog.csdn.net/guolin_blog/article/details/11952435)
+
+## [事件分发](https://www.jianshu.com/p/e99b5e8bd67b)
+![图解](https://upload-images.jianshu.io/upload_images/966283-b9cb65aceea9219b.png)
+
+- Activity->viewGroup->view
+- dispatchTouchEvent()->onInterceptTouchEvent()->onTouchEvent()
+- onTouch()->onClick()
+- dispatchTouchEvent() activity->viewGroup->view, onTouchEvent() view->viewGroup->activity
+
+## Socket[玉刚说](https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&mid=2649492841&idx=1&sn=751872addc47d2464b8935be17d715d6&chksm=8eec8696b99b0f80b2ebb8e4c346adf177ad206401d83c17aca4047d883b0cc7c0788619df9d&scene=38#wechat_redirect)
+- IP协议，提供了两个IP之间的通信
+- TCP: 建立在IP的基础上，完成了主机与主机之间进程的通信。建立通信之前需要三次握手，
+- UDP: 不需要经过握手，就可以直接发送数据
+- Socket是TCP层的封装，通过socket，可以进行TCP通信。
+- socket共有两个接口，用于监听客户连接的ServerSocket和用户通信的Socket
+
+## HTTP & HTTPS
+- http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。
+- http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
+- http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
+
+## 快速滑动不加载图片
+- onScrollListener - onScrollStateChanged{} RecyclerView.Scroll_STATE_IDLE & DRAGGING resume(), SETTLINE pause().
+- Fresco.getImagePipeLine().resume()、Glide.with(context).resumeRequests().
+
+## Bitmap加载优化
+- BitmapFactory.decode**() BitmapFactory.options inJustDecodeBounds/inSmapleSize. 获取图片实际宽高，根据实际加载需要宽高压缩。解码器会对非2的幂的数
+进行向下处理获取接近2的幂的数。
+- Bitmap对象、像素数据。Android3.0之前Bitmap对象放在Java堆中，像素数据放在Native内存中，需要手动调用recycle。3.0~7.0Bitmap对象和像素数据都放在Java堆中，造成大量GC，系统内存没有利用起来。8.0 利用NativeAllocationRegistry辅助回收Native内存。
+- Fresco在Dalvik中把图片放在Native内存中。调用libandroid_runtime.so中Bitmap构造函数，创建Java Bitmap，将Java bitmap内容绘制到Native Bitmap中，再回收Java Bitmap。频繁创建Java Bitmap容易引起内存抖动。
+
+### Bitmap内存检测
+- Bitmap创建统一接口，在接口层将所有被创建出来的Bitmap加入到一个WeakHashmap中，记录创建时间、堆栈信息，在适当的时候Bitmap的状态。系统oom之后，输出bitmap信息，便于查找问题。
+
+```java
+		// Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+```
+
+
+## 崩溃上报、分析
+- 搜集更详细的信息，进程 线程 内存情况 页面 操作路径，特定场景下搜集网路 电量...
+
+## 卡顿 线程优先级 CPU调度
+- 线程优先级会影响Android系统的调度策略，当CPU繁忙的时候，线程调度会对执行效率有非常大的影响。避免存在高优先级线程空等低优先级线程，主线程等待后台线程的锁。
+- 获取卡顿信息发送SigQuit信号，读取data/anr/trace 详细信息。
+
+## 获取所有线程堆栈
+- Thread.getAllStackTraces()  7.0不返回主线程的堆栈。
+
+## 事件分发机制
+```Java
+	public boolean dispatchTouchEvent(MotionEvent ev){
+		boolean consume = false;
+		if (onInterceptTouchEvent(ev)) {
+			consume = onTouchEvent(ev);
+		}else{
+			consume = child.dispatchTouchEvent(ev);
+		}
+		return consume;
+	}
+```
+- onTouchListener的优先级高于OnTouchEvent
+
+## ConstraintLayout 联动&Behavior
+
+## View宽高
+- onLayout以后才能确定拿到View的宽高，getMeasureWidth有可能不等与getWidth，源码上getWidth是mRight-mLeft。获取View宽高 1、onWindowFocusChanged 2、view.post() 源码解析：View源码中AttachInfo(附加到父View时为视图提供的一组信息)handler实现，运行在当前视图线程。
+
+## ViewRoot WindowManager DecorView
+- 在ViewRoot中requestlayout() 会检测当前线程是否为创建ViewRootImpl的线程，如果不是就会报出异常。viewRootImpl是在onResume时创建的，Android以此控制操作UI要在主线程中。Android是单线程模型，因为支持多线程修改View的话，容易出现线程同步，线程安全的问题，简化了系统设计。
+
+## 渠道打包 自动化部署
+- https://codezjx.com/2015/10/30/gradle-app-multi-flavor/
+
+## 2020-04-01 11:11:03 @cly
+
+
+
+
+
+
+
+
+
+
+
+
+
 
