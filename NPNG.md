@@ -211,7 +211,7 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 - handler,looper,Message,MessageQueue
 - 子线程中创建Handler,Looper.prepare()->new Handler()->Looper.loop()
-- PostDelay(),postDelay的Message并不是先等待一定时间在放到MessageQueue中，而是直接放入并阻塞当前线程，然后将其delay的时间和对头的进行比较，按照触发时间进行排序。
+- PostDelay(),postDelay的Message并不是先等待一定时间在放到MessageQueue中，而是直接放入并阻塞当前线程，然后将其delay的时间和对头的进行比较，按照触发时间进行排序。其余事件可以唤醒线程。
 
 ## service
 
