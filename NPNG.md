@@ -314,6 +314,25 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 ## 2020-04-01 11:11:03 @cly
 - [BitmapRegionDecoder 区域解码器加载超大图](https://www.jianshu.com/p/878e4ddaa51b)
 
+## 2020-04-08 10:30:05 @cly
+- MAT The platform metadata area could not be written - 文件无写入权限。open -a mat.app --args -data /Users/bob/Documents/mat/heapDump 
+- hprof-conv -z /Users/bob/Documents/mat/heapDump/memory-20200408T110315.hprof 1.hprof hporf文件转换
+
+## 2020-04-08 22:39:26 @cly 设计模式
+- 单例模式
+- 装饰模式 file io context activity
+- 建造者模式 okhttp源码
+- 代理模式 动态代理 注解
+- 享元模式 handler源码
+- 适配器模式 
+- 外观模式 门面模式 架构隔离
+- 迭代器模式 容器中广泛应用
+- 观察者模式 rxJava
+- 责任链模式 okHttp/事件分发
+
+- 创建型 结构型 行为型
+
+## 2020-04-09 17:00:30 @cly
 
 
 

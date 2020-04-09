@@ -21,6 +21,9 @@
 - git stash apply stash@{1}
 - git push origin 1.2.0:1.2.0
 - git push -u origin 0.7.0android -f
+- git branch -D dev  删除本地分支
+- git push origin --delete branch 删除远程分支
+- git branch --delete --remotes <remotes>/<branch>
 
 - git pull    拉取远程仓库
 - git log 查看提交信息
