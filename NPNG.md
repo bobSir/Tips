@@ -90,7 +90,7 @@ CachedThreadPool: 缓存线程池
 - onHandleIntent工作线程处理耗时任务，单线程流程处理任务。执行完任务自动停止。
 
 ## 2019/04/19
-- <item name="android:windowBackground">@null</item>坑坑坑，style设置这个属性后activit不会回调到onStop，对Android系统来说这个activity是可见的只是不可交互、
+- ??? 验证不符号 ???  <item name="android:windowBackground">@null</item>坑坑坑，style设置这个属性后activit不会回调到onStop，对Android系统来说这个activity是可见的只是不可交互、
 - activity透明不要用这个属性，将windowBackGround设置为透明，overridePendingTransition（animEnter,animExit）, animExit也设置一个默认动画避免黑屏、
 
 ## 查看签名
@@ -332,16 +332,33 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 - 创建型 结构型 行为型
 
-## 2020-04-09 17:00:30 @cly
+## 2020-04-10 11:08:11 @cly
+- LruCache DiskLruCache 最近最少使用算法
 
+## 2020-04-10 13:45:15 @cly
+- socket:传输控制层接口，使用更加灵活。webSocket:完整的应用层协议
+- http/https 连接三次握手 断开四次握手
+- tcp/udp 
 
+## 2020-04-12 19:39:50 @cly
+- 耗电分析 
+- 重置电能统计 adb shell dumpsys batterystats --reset & adb shell  dumpsys --enable full-wake-history
+- 文本分析 adb shell dumpsys batterystats > batterystats.txt & adb shell dumpsys > com.xxx > batterystats.txt 
+- Battery Historian2.0 分析
+- cpu使用频率高耗电 cpu利用率高不耗电
+- Job Scheduler (workManager) 延迟执行
+- 传感器 GPS 停止不必要的后台应用
 
+## 2020-04-15 13:16:16 @cly
+- systrace chrome://tracing/   
+- systrace.py -t 10 -o d:/mytrace.html sched gfx view am -a com.example.myapplication
 
+## 2020-04-16 14:32:02 @cly
+- contentProvider实现自动完成初始化，反射获取application
 
-
-
-
-
+## 2020-04-22 15:14:29 @cly
+- 事件冲突 内部拦截法 parent.requestDisallowInterceptTouchEvent(), 父View - onInterceptTouchEvent 不拦截DOWN，因为拦截了DOWN其他事件都不会向下传递。
+- 外部拦截法 根据业务在具体事件中判断
 
 
 

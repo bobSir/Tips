@@ -41,6 +41,7 @@
 - ./gradlew -installRelease
 - ./gradlew -installDebug
 - ./gradlew clean build --refresh-dependencies
+- ./gradlew :app:assembleDebug
 - 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
 
 ## 未命名
