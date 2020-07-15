@@ -46,9 +46,11 @@
 
 ## 未命名
 
+- mac设置安装任何来源软件 sudo spctl --master-disable
 - mac文件生效 source 	~/.bashrc
 - adb shell dumpsys activity 查看ActivityManagerService所有信息
 - adb shell dumpsys activity activities 查看Activity组件信息
+- adb shell ps|grep com.tencent.mm  查看应用进程
 - providers 
 - broadcasts
 - intents
