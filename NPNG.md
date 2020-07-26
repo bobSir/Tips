@@ -316,7 +316,10 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 
 ## 2020-04-08 10:30:05 @cly
 - MAT The platform metadata area could not be written - 文件无写入权限。open -a mat.app --args -data /Users/bob/Documents/mat/heapDump 
-- hprof-conv -z /Users/bob/Documents/mat/heapDump/memory-20200408T110315.hprof 1.hprof hporf文件转换
+- hprof-conv -z /Users/bob/Documents/mat/heapDump/memory-20200408T110315.hprof xxx.hprof //hprof文件转换
+- 手动触发gc 然后开始记录heapDump文件
+- 内存泄漏检测:exclude 软弱虚引用，剩下就是持有强引用，造成内存泄漏
+- 大内存对象检测 
 
 ## 2020-04-08 22:39:26 @cly 设计模式
 - 单例模式
@@ -376,10 +379,8 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 - fragment 页面展现方式 位置 取决于父容器！！！ 就是Transaction replace add 的 resId。
 
 ## 2020-07-12 10:43:08 @cly
-
 - Log.i(TAG, "Skipped " + skippedFrames + " frames!  "
         + "The application may be doing too much work on its main thread.");
-
 
 
 

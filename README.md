@@ -45,7 +45,7 @@
 - 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
 
 ## 未命名
-- sudo spctl --master-disable //开启安全性和隐私的全部来源
+- mac设置安装任何来源软件 sudo spctl --master-disable
 - mac文件生效 source 	~/.bashrc
 - adb shell dumpsys activity 查看ActivityManagerService所有信息
 - adb shell dumpsys activity activities 查看Activity组件信息
