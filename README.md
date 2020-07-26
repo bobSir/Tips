@@ -45,10 +45,11 @@
 - 连接远程服务器 sudo su -  ssh -p 22 root@207.148.125.203
 
 ## 未命名
-
+- sudo spctl --master-disable //开启安全性和隐私的全部来源
 - mac文件生效 source 	~/.bashrc
 - adb shell dumpsys activity 查看ActivityManagerService所有信息
 - adb shell dumpsys activity activities 查看Activity组件信息
+- adb shell ps|grep com.tencent.mm  查看应用进程
 - providers 
 - broadcasts
 - intents

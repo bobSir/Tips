@@ -11,7 +11,7 @@
 
 ## 2019/02/14
 ### 线程
-- Thread.join():可以将2个交替执行的线程合并为顺序执行的线程。比如在线程B中调用线程A的join()方法，直到线程A执行完，才会继续执行线程B。
+- Thread.join():可以将2个交替执行的  合并为顺序执行的线程。比如在线程B中调用线程A的join()方法，直到线程A执行完，才会继续执行线程B。
 - Callable:类似于Runnable的接口，1、自定义一个类 MyCallable 实现 Callable 接口，并重写call()方法
 2、将要执行的代码写在call()方法中
 3、创建线程池对象，调用submit()方法执行MyCallable任务，并返回Future对象
@@ -359,6 +359,43 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 ## 2020-04-22 15:14:29 @cly
 - 事件冲突 内部拦截法 parent.requestDisallowInterceptTouchEvent(), 父View - onInterceptTouchEvent 不拦截DOWN，因为拦截了DOWN其他事件都不会向下传递。
 - 外部拦截法 根据业务在具体事件中判断
+
+## 2020-05-08 14:00:24 @cly
+- compileOnly 注意事项 依赖库初始化 统一判断逻辑，封装sdk资源文件命名约束
+
+## 2020-05-11 14:23:49 @cly
+- view加载设置为硬件加速 bitmap内存管理属于另一块 在view转bitmap会出现白屏
+
+## 2020-05-18 15:10:52 @cly
+- js-native交互 
+- 1、webView注入js 
+- 2、webView.addJavascriptInterface(interface,"webview"),window.webview.post()
+- 本质上是一样的，一个是客户端注入 一个是前端注入。
+
+## 2020-05-19 14:27:53 @cly
+- fragment 页面展现方式 位置 取决于父容器！！！ 就是Transaction replace add 的 resId。
+
+## 2020-07-12 10:43:08 @cly
+
+- Log.i(TAG, "Skipped " + skippedFrames + " frames!  "
+        + "The application may be doing too much work on its main thread.");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
