@@ -378,6 +378,9 @@ keytool -list -v -keystore /Users/bob/AndroidWorkSpace/papa/mask.jks
 ## 2020-05-19 14:27:53 @cly
 - fragment 页面展现方式 位置 取决于父容器！！！ 就是Transaction replace add 的 resId。
 
+## 2020-07-12 10:43:08 @cly
+- Log.i(TAG, "Skipped " + skippedFrames + " frames!  "
+        + "The application may be doing too much work on its main thread.");
 
 
 
