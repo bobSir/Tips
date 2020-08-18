@@ -58,6 +58,7 @@
 - adb shell & run-as 包名
 - chmod u+x *.sh 添加执行权限
 - ./gradlew app:dependencies --configuration releaseRuntimeClasspath 查看项目依赖传递关系
+- ./gradlew :app:dependencies 
 - 反编译 命令 sh d2j-dex2jar.sh classes.dex
 - 单独打某个渠道包 ./gradlew assemblehuaweiDebug  ./gradlew assemblehuawei
 - keytool -list -v -keystore lanxin.jks 查看应用签名信息
